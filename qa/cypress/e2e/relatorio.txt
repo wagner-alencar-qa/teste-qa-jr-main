@@ -1,0 +1,149 @@
+Relatório — Cadastro de Usuários
+
+Contexto
+
+Durante a execução dos testes funcionais e exploratórios no módulo Cadastro de Usuários, foram identificados diversos pontos de inconsistência em relação as validações de campos e comportamento da interface.
+
+Os achados abaixo impactam diretamente a qualidade do sistema, experiência do usuário e confiabilidade dos dados.
+
+Funcionais
+==============================
+1. Falha na edição de cadastro
+==============================
+
+Descrição:
+Ao clicar em editar um usuário já cadastrado, o sistema não exibe nenhuma ação.
+
+Comportamento esperado:
+Deve exibir o modal/ formulário semelhante ao de criação com os dados do usuario escolhido possibilidtando a edição
+
+Impacto:
+Alto —> impede a manutenção correta dos dados do usuário.
+
+================================
+2. Falha na exclusão de cadastro
+================================
+
+Descrição:
+Ao excluir um usuário, o sistema exibe uma mensagem de confirmação, porém o cadastro não é removido da listagem.
+
+Comportamento esperado:
+O usuário deveria ser removido da lista após a exclusão.
+
+Impacto:
+Alto —> operação crítica de CRUD não funciona corretamente.
+
+
+Validação de Campos
+
+=========================================
+3. Campo Nome aceita caracteres especiais
+=========================================
+
+Descrição:
+O campo permite a inserção de caracteres especiais e valida o cadastro normalmente.
+
+Comportamento esperado:
+O campo deveria restringir caracteres inválidos, aceitando apenas letras (e eventualmente espaços).
+
+Impacto:
+Médio —> compromete a padronização e integridade dos dados.
+
+===============================================
+4. Campo Email aceita caracteres fora do padrão
+===============================================
+
+Descrição:
+O sistema permite caracteres especiais não convencionais em endereços de e-mail, além dos padrões geralmente aceitos (+, -, _, @).
+
+Comportamento esperado:
+O e-mail deveria seguir o padrão RFC ou uma validação mais restritiva conforme regra de negócio.
+
+Impacto:
+Alto —> pode gerar e-mails inválidos e problemas de comunicação.
+
+======================================================
+5. Campo Telefone aceita letras e caracteres especiais
+======================================================
+
+Descrição:
+O campo permite letras, caracteres especiais e trata o valor como string sem validação numérica.
+
+Comportamento esperado:
+O campo deveria aceitar apenas números, com máscara e validação de formato.
+
+Impacto:
+Médio —> dados inconsistentes e difícil contato com o usuário.
+
+===========================================
+6. Campo Cidade de Nascimento sem validação
+===========================================
+
+Descrição:
+O campo aceita qualquer tipo de caractere sem restrição ou máscara.
+
+Comportamento esperado:
+Deveria haver validação básica (somente letras) ou sugestão via autocomplete/lista.
+
+Impacto:
+Baixo a médio — depende da regra de negócio, mas prejudica padronização.
+
+==============================================
+7. Campo Data de Nascimento aceita data futura
+==============================================
+
+Descrição:
+Apesar da máscara funcionar corretamente, o sistema permite cadastrar usuários com data de nascimento futura.
+
+Comportamento esperado:
+Datas futuras não deveriam ser permitidas.
+
+Impacto:
+Alto —> viola regra básica de negócio.
+
+========================================
+8. Ausência de restrição de idade mínima
+========================================
+
+Descrição:
+Não existe validação para idade mínima ou máxima.
+
+Sugestão:
+Implementar validação conforme regra de negócio (ex: maior de 18 anos).
+
+Impacto:
+Médio —> depende da necessidade do sistema.
+
+
+Interface (UI/UX)
+
+=================================
+9. Exibição incorreta de empresas
+=================================
+
+Descrição:
+Ao selecionar empresas no cadastro:
+
+Os nomes aparecem cortados
+
+Ao selecionar múltiplas empresas, apenas uma fica visível
+
+Comportamento esperado:
+Todas as empresas selecionadas deveriam ser exibidas corretamente, com layout adequado.
+
+Impacto:
+Médio —> confunde o usuário e prejudica a visualização.
+
+=================================================
+10. Quebra de layout ao cadastrar muitos usuários
+=================================================
+
+Descrição:
+Ao cadastrar diversos usuários, a linha do cadastro ultrapassa o container da tabela, quebrando o layout da tela.
+
+Comportamento esperado:
+O layout deveria se manter responsivo, com quebra de linha, scroll ou truncamento controlado.
+
+Impacto:
+Médio —> prejudica a o designer da página.
+

@@ -1,0 +1,149 @@
+
+Feature: : Cadastro de Usuário
+  Como um usuário do sistema
+  Quero cadastrar usuários
+  Para que eles sejam exibidos corretamente na listagem
+
+====
+CRUD
+====
+
+Cenário: Criar usuário com dados válidos
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E preencho todos os campos obrigatórios com dados válidos
+  E seleciono uma empresa válida
+  E clico em salvar
+  Então o usuário deve ser exibido na listagem
+
+Cenário: Visualizar dados de um usuário cadastrado
+  Dado que existe um usuário cadastrado
+  E que estou na tela de usuários
+  Quando seleciono o usuário na listagem
+  Então os dados do usuário devem ser exibidos corretamente
+
+Cenário: Editar dados de um usuário
+  Dado que existe um usuário cadastrado
+  E que estou na tela de usuários
+  Quando edito os dados do usuário
+  E salvo as alterações
+  Então os dados atualizados devem ser exibidos na listagem
+
+Cenário: Excluir um usuário
+  Dado que existe um usuário cadastrado
+  E que estou na tela de usuários
+  Quando excluo o usuário
+  Então o usuário não deve ser exibido na listagem
+
+==========
+CAMPO NOME
+==========
+
+Cenário: Não permitir cadastro com nome vazio
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E deixo o campo nome vazio
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo nome
+
+Cenário: Não permitir cadastro com nome inválido
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E preencho o campo nome com caracteres inválidos
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve impedir o cadastro
+
+===========
+CAMPO EMAIL
+===========
+
+Cenário: Não permitir cadastro com email vazio
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E deixo o campo email vazio
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo email
+
+Cenário: Não permitir cadastro com email em formato inválido
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E preencho o campo email com formato inválido
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem de erro para o campo email
+
+==============
+CAMPO TELEFONE
+==============
+
+Cenário: Não permitir cadastro com telefone vazio
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E deixo o campo telefone vazio
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo telefone
+
+Cenário: Não permitir cadastro com telefone inválido
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E preencho o campo telefone com valor inválido
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem de erro para o campo telefone
+
+==========================
+CAMPO CIDADE DE NASCIMENTO
+==========================
+
+Cenário: Não permitir cadastro com cidade de nascimento vazia
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E deixo o campo cidade de nascimento vazio
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo cidade de nascimento
+
+Cenário: Não permitir cadastro com cidade de nascimento inválida
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E preencho o campo cidade de nascimento com caracteres inválidos
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem de erro
+
+========================
+CAMPO DATA DE NASCIMENTO
+========================
+
+Cenário: Não permitir cadastro com data de nascimento vazia
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E deixo o campo data de nascimento vazio
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo data de nascimento
+
+Cenário: Não permitir cadastro com data de nascimento futura
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E preencho o campo data de nascimento com uma data futura
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem de erro
+
+==============
+CAMPO EMPRESAS
+==============  
+
+Cenário: Não permitir cadastro sem seleção de empresa
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E não seleciono nenhuma empresa
+  E preencho os demais campos com dados válidos
+  E clico em salvar
+  Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo empresa
+
