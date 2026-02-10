@@ -147,3 +147,11 @@ Cenário: Não permitir cadastro sem seleção de empresa
   E clico em salvar
   Então o sistema deve exibir uma mensagem solicitando o preenchimento do campo empresa
 
+Cenário: Permitir cadastro com múltiplas empresas selecionadas
+  Dado que estou na tela de usuários
+  Quando clico no botão adicionar usuário
+  E seleciono mais de uma empresa válida
+  E preencho os demais campos obrigatórios com dados válidos
+  E clico em salvar
+  Então o sistema deve cadastrar o usuário com todas as empresas selecionadas
+  E todas as empresas selecionadas devem ser exibidas corretamente na listagem

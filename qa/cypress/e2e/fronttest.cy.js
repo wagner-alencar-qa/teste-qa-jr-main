@@ -89,7 +89,7 @@ describe('Cadastro de Usuário', () => {
     // CAMPO - Nome
     // ======================
 
-    it('Validação Nome - não deve permitir cadastro com nome vazio', () => {
+    it('Deve não permitir cadastro com nome vazio', () => {
   
         // Abre o modal/formulário de criação de usuário
         cy.get('#new-user').click();
@@ -128,7 +128,7 @@ describe('Cadastro de Usuário', () => {
 
 //Código comenpara para ser utilizado em uma  atualização futura. Para utiliza-lo retire o "/*" do inicio e final do códiiigo 
 
-    /*it('Validação Nome - não deve permitir caracteres especiais', () => {
+    /*it('Deve não permitir caracteres especiais', () => {
   
       // Abre o modal/formulário de criação de usuário
       cy.get('#new-user').click();
@@ -168,7 +168,7 @@ describe('Cadastro de Usuário', () => {
   // CAMPO - Email
   // ======================
 
-    it('Validação Email - não deve permitir cadastro com email vazio', () => {
+    it('Deve não permitir cadastro com email vazio', () => {
   
       // Abre o modal/formulário de criação de usuário
       cy.get('#new-user').click();
@@ -207,7 +207,7 @@ describe('Cadastro de Usuário', () => {
 
 //Código comentado para para ser utilizado em uma  atualização futura. Para utiliza-lo retire o "/*" do inicio e final do códiiigo 
 
-  /*it('Validação Email - não deve permitir caracteres especiais', () => {
+  /*it('Deve não permitir caracteres especiais', () => {
   
       // Abre o modal/formulário de criação de usuário
       cy.get('#new-user').click();
@@ -246,7 +246,7 @@ describe('Cadastro de Usuário', () => {
   // CAMPO - Telefone
   // ======================
 
-  it('Validação Telefone - não deve permitir cadastro com telefone vazio', () => {
+  it('Deve não permitir cadastro com telefone vazio', () => {
   
     // Abre o modal/formulário de criação de usuário
     cy.get('#new-user').click();
@@ -293,7 +293,7 @@ describe('Cadastro de Usuário', () => {
 
 //Código comentado para para ser utilizado em uma  atualização futura. Para utiliza-lo retire o "/*" do inicio e final do códiiigo 
 
-/*it('Validação Telefone - não deve aceitar letras ou caracteres especiais', () => {
+/*it('Deve não aceitar letras ou caracteres especiais', () => {
 
   // Abre o modal/formulário de criação de usuário
   cy.get('#new-user').click();
@@ -352,7 +352,7 @@ describe('Cadastro de Usuário', () => {
 // CAMPO - Cidade de Nascimento
 // ============================
 
-it('Validação Cidade de Nascimento - não deve permitir cadastro sem cidade', () => {
+it('Deve não permitir cadastro sem cidade', () => {
   
   // Abre o modal/formulário de criação de usuário
   cy.get('#new-user').click();
@@ -400,7 +400,7 @@ it('Validação Cidade de Nascimento - não deve permitir cadastro sem cidade', 
 // CAMPO - Data de Nascimento
 // ==========================
 
-  it('Validação Data de Nascimento - não deve permitir campo vazio', () => {
+  it('Deve não permitir campo vazio', () => {
   
       // Abre o modal/formulário de criação de usuário
       cy.get('#new-user').click();
@@ -446,7 +446,7 @@ it('Validação Cidade de Nascimento - não deve permitir cadastro sem cidade', 
   // Soma 1 dia à data atual
   return today.toISOString().split('T')[0]; 
 };
-  it('Validação Data de Nascimento - não deve aceitar data futura', () => {
+  it('Deve não aceitar data futura', () => {
 
     // Abre o modal/formulário
     cy.get('#new-user').click();
@@ -481,7 +481,7 @@ it('Validação Cidade de Nascimento - não deve permitir cadastro sem cidade', 
 // CAMPO - Empresas
 // ================
 
-  it('Validação Empresas - não deve permitir cadastro sem empresa selecionada', () => {
+  it('Deve permitir cadastro sem empresa selecionada', () => {
   
       // Abre o modal/formulário de criação de usuário
       cy.get('#new-user').click();
@@ -524,7 +524,7 @@ it('Validação Cidade de Nascimento - não deve permitir cadastro sem cidade', 
     });
   });
 
-it.only('Validação Empresas - deve permitir selecionar múltiplas empresas', () => {
+it('Deve permitir selecionar múltiplas empresas', () => {
   
   // Abre o modal/formulário de criação de usuário
   cy.get('#new-user').click();

@@ -124,12 +124,12 @@ Interface (UI/UX)
 Descrição:
 Ao selecionar empresas no cadastro:
 
-Os nomes aparecem cortados
+Os nomes aparecem cortados e não exibe o mesmo nome no qual aparece no cadastro.
 
 Ao selecionar múltiplas empresas, apenas uma fica visível
 
 Comportamento esperado:
-Todas as empresas selecionadas deveriam ser exibidas corretamente, com layout adequado.
+Todas as empresas selecionadas deveriam ser exibidas corretamente, com layout adequado e o mesmo nome selecionado.
 
 Impacto:
 Médio —> confunde o usuário e prejudica a visualização.
@@ -146,4 +146,46 @@ O layout deveria se manter responsivo, com quebra de linha, scroll ou truncament
 
 Impacto:
 Médio —> prejudica a o designer da página.
+
+=====================================================================
+11. Inconsistência nos nomes das colunas em relação a regra de negócio
+=====================================================================
+
+Descrição:
+Os nomes exibidos nas colunas da listagem de usuários não estão alinhados
+com a nomenclatura definida pela regra de negócio.
+
+Atualmente, as colunas estão apresentadas como:
+- nome
+- email
+- nascimento
+- empresas
+
+Porém, conforme a regra de negócio, o correto seria:
+- Nome Completo
+- E-mail corporativo
+- Data de Nascimento
+- Empresa vinculada
+
+Sugestão:
+Padronizar os nomes das colunas da interface para refletirem corretamente
+a nomenclatura definida pela regra de negócio, garantindo maior clareza
+e consistência para o usuário final.
+
+Impacto:
+Baixo a Médio —> impacto principalmente na usabilidade, entendimento
+da informação e aderência às regras de negócio.
+
+OBS.: No formulário encontram-se da mesma forma.
+
+
+
+=======================================================================================================================================
+Os campos telefone e cidade de nascimento não estão com obrigatoriedade, logo, necessitariam ter de adicionar o atributo required neles.
+=======================================================================================================================================
+
+=======================================================================================================================================
+Deixei alguns testes comentando com /**/ para que quando for atualizado já possua o código pronto
+=======================================================================================================================================
+
 

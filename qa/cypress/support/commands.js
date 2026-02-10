@@ -27,20 +27,20 @@ Cypress.Commands.add("generateUserData", () => {
   const phone = `21 9${Math.floor(10000000 + Math.random() * 89999999)}`;
 
   // Gera um email válido e único
-  const email = `${name}${random}@gmail.com`;
+  const email = `${name}${random}@empresa.com`;
 
   // Gera um email com caracteres especiais no nome
-  const specialEmail = `${specialName}${random}@gmail.com`;
+  const specialEmail = `${specialName}${random}@empresa.com`;
 
   // cy.wrap transforma o objeto em um comando Cypress
   return cy.wrap({
-    name,          // Nome válido
-    email,         // Email válido
-    specialName,   // Nome com caracteres especiais
-    specialEmail,  // Email com caracteres especiais
-    phone,         // Telefone gerado
-    city,          // Cidade selecionada
-    birthDate: "2026-01-19", // Data fixa para evitar variação nos testes
+    name,         
+    email,         
+    specialName,   
+    specialEmail,  
+    phone,         
+    city,         
+    birthDate: "2026-01-19",  
   });
 });
 
