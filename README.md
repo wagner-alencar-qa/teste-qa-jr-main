@@ -1,5 +1,5 @@
 
-# Para realizar o teste crei a pasta chamada QA. Todo conteúdo produzido por mim, se encontra na mesma. ASS.: Wagner
+# Para realizar o teste criei a pasta chamada QA. Todo conteúdo produzido por mim, se encontra na mesma. ASS.: Wagner
 
 # Teste Técnico
 
